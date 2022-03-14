@@ -92,8 +92,7 @@ function mixAssetsDir(query, cb) {
  */
 
 const sassOptions = {
-  precision: 5,
-  includePaths: ['node_modules']
+  precision: 5
 };
 
 // Core stylesheets
@@ -130,10 +129,6 @@ mixAssetsDir('css/**/*.css', (src, dest) => mix.copy(src, dest));
 
 mix.copy('node_modules/boxicons/fonts/*', 'public/assets/vendor/fonts/boxicons');
 mix.copy('node_modules/@fortawesome/fontawesome-free/webfonts/*', 'public/assets/vendor/fonts/fontawesome');
-mix.copyDirectory('resources/assets/audio', 'public/assets/audio');
-mix.copyDirectory('resources/assets/img', 'public/assets/img');
-mix.copyDirectory('resources/assets/json', 'public/assets/json');
-mix.copyDirectory('resources/assets/svg', 'public/assets/svg');
 mix.js('resources/js/app.js', 'public/js/alpine.js');
 
 mix.version();
