@@ -126,6 +126,8 @@ mixAssetsDir('vendor/fonts/!(_)*.scss', (src, dest) =>
 
 mixAssetsDir('js/**/*.js', (src, dest) => mix.scripts(src, dest));
 mixAssetsDir('css/**/*.css', (src, dest) => mix.copy(src, dest));
+// laravel working crud app related js
+mix.js('resources/js/laravel-user-management.js', 'public/js/');
 
 mix.copy('node_modules/boxicons/fonts/*', 'public/assets/vendor/fonts/boxicons');
 mix.copy('node_modules/@fortawesome/fontawesome-free/webfonts/*', 'public/assets/vendor/fonts/fontawesome');
