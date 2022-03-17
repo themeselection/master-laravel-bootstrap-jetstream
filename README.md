@@ -10,7 +10,7 @@
 
 Laravel Jetstream is designed using Tailwind CSS and offers your choice of Livewire or Inertia scaffolding. We have removed the Tailwind CSS dependency and modified the Livewire scaffolding as per our template. __Please note we have not provided Inertia scaffolding yet. This package only works with livewire scaffolding__.
 
-Master Laravel Jetsream is a lightweight laravel 8 package that focuses on the `VIEW` side of [Jetstream](https://github.com/laravel/jetstream) package installed in your Laravel application, so when a swap is performed, the `Action`, `MODEL`, `CONTROLLER`, `Component` and `Action` classes of your project is still 100% handled by Laravel development team with no added layer of complexity.
+Master Laravel Jetsream is a lightweight laravel package that focuses on the `VIEW` side of [Jetstream](https://github.com/laravel/jetstream) package installed in your Laravel application, so when a swap is performed, the `Action`, `MODEL`, `CONTROLLER`, `Component` and `Action` classes of your project is still 100% handled by Laravel development team with no added layer of complexity.
 
 ## Table of Content
 
@@ -116,7 +116,7 @@ php artisan migrate
 
 #### Pagination
 
-It is also important to point out that Laravel 8 still includes pagination views built using Bootstrap CSS. To use these views instead of the default Tailwind views, you may call the paginator's useBootstrap method within your AppServiceProvider:
+It is also important to point out that Laravel still includes pagination views built using Bootstrap CSS. To use these views instead of the default Tailwind views, you may call the paginator's useBootstrap method within your AppServiceProvider:
 
 ```php
 
