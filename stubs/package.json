@@ -10,7 +10,7 @@
     "production": "mix --production"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "~5.15.4",
+    "@fortawesome/fontawesome-free": "~6.1.1",
     "@fullcalendar/bootstrap": "~5.9.0",
     "@fullcalendar/core": "~5.9.0",
     "@fullcalendar/daygrid": "~5.9.0",
@@ -20,7 +20,7 @@
     "@fullcalendar/timeline": "~5.9.0",
     "@popperjs/core": "^2.9.2",
     "@simonwep/pickr": "~1.8.0",
-    "@yaireo/tagify": "~4.1.4",
+    "@yaireo/tagify": "~4.9.8",
     "alpinejs": "^3.9.0",
     "animate.css": "~4.1.1",
     "aos": "~2.3.4",
@@ -32,7 +32,7 @@
     "bootstrap-datepicker": "~1.9.0",
     "bootstrap-daterangepicker": "~3.1.0",
     "bootstrap-maxlength": "~1.10.0",
-    "bootstrap-select": "^1.14.0-beta2",
+    "bootstrap-select": "github:snapappointments/bootstrap-select#main",
     "boxicons": "~2.0.9",
     "bs-stepper": "~1.7.0",
     "chart.js": "~3.5.1",
@@ -55,7 +55,7 @@
     "datatables.net-select-bs5": "~1.3.3",
     "dropzone": "~5.9.2",
     "feather-icons": "~4.28.0",
-    "flag-icon-css": "~3.4.6",
+    "flag-icons": "~6.1.1",
     "flatpickr": "~4.6.9",
     "hammerjs": "~2.0.8",
     "highlight.js": "~9.17.1",
@@ -91,6 +91,7 @@
     "typeahead.js": "~0.11.1"
   },
   "devDependencies": {
+    "@prettier/plugin-php": "0.14.3",
     "axios": "^0.25",
     "browser-sync": "^2.27.7",
     "browser-sync-webpack-plugin": "2.3.0",
@@ -98,6 +99,7 @@
     "laravel-mix": "^6.0.6",
     "lodash": "^4.17.19",
     "postcss": "^8.1.14",
+    "prettier": "2.0.5",
     "resolve-url-loader": "5.0.0",
     "sass-loader": "12.1.0"
   },
