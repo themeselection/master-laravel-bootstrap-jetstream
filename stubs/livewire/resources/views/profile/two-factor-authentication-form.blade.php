@@ -10,7 +10,11 @@
   <x-slot name="content">
     <h6 class="fw-bolder">
       @if ($this->enabled)
-        {{ __('You have enabled two factor authentication.') }}
+        @if ($showingConfirmation)
+          {{ __('You are enabling two factor authentication.') }}
+        @else
+          {{ __('You have enabled two factor authentication.') }}
+        @endif
       @else
         {{ __('You have not enabled two factor authentication.') }}
       @endif
@@ -23,12 +27,32 @@
     @if ($this->enabled)
       @if ($showingQrCode)
         <p class="card-text mt-2">
-          {{ __('Two factor authentication is now enabled. Scan the following QR code using your phone\'s authenticator application.') }}
+          @if ($showingConfirmation)
+            {{ __('Scan the following QR code using your phone\'s authenticator application and confirm it with the generated OTP code.') }}
+          @else
+            {{ __('Two factor authentication is now enabled. Scan the following QR code using your phone\'s authenticator application.') }}
+          @endif
         </p>
 
         <div class="mt-2">
           {!! $this->user->twoFactorQrCodeSvg() !!}
         </div>
+
+        <div class="mt-4">
+            <p class="font-semibold">
+              {{ __('Setup Key') }}: {{ decrypt($this->user->two_factor_secret) }}
+            </p>
+        </div>
+
+        @if ($showingConfirmation)
+          <div class="mt-2">
+            <x-jet-label for="code" value="{{ __('Code') }}" />
+            <x-jet-input id="code" class="d-block mt-3 w-100" type="text" inputmode="numeric" name="code" autofocus autocomplete="one-time-code"
+                wire:model.defer="code"
+                wire:keydown.enter="confirmTwoFactorAuthentication" />
+            <x-jet-input-error for="code" class="mt-3" />
+          </div>
+        @endif
       @endif
 
       @if ($showingRecoveryCodes)
@@ -57,6 +81,12 @@
             <x-jet-secondary-button class="me-1">
               {{ __('Regenerate Recovery Codes') }}
             </x-jet-secondary-button>
+          </x-jet-confirms-password>
+        @elseif ($showingConfirmation)
+          <x-jet-confirms-password wire:then="confirmTwoFactorAuthentication">
+            <x-jet-button type="button" wire:loading.attr="disabled">
+              {{ __('Confirm') }}
+            </x-jet-button>
           </x-jet-confirms-password>
         @else
           <x-jet-confirms-password wire:then="showRecoveryCodes">
