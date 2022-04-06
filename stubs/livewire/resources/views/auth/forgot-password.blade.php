@@ -3,7 +3,7 @@ $configData = Helper::appClasses();
 $customizerHidden = 'customizer-hide';
 @endphp
 
-@extends('layouts/layoutMaster')
+@extends('layouts/blankLayout')
 
 @section('title', 'Forgot Password')
 
