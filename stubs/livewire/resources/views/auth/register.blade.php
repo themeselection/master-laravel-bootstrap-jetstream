@@ -1,3 +1,8 @@
+@php
+$configData = Helper::appClasses();
+$customizerHidden = 'customizer-hide';
+@endphp
+
 @extends('layouts/blankLayout')
 
 @section('title', 'Register Page')
@@ -11,13 +16,14 @@
 <div class="authentication-wrapper authentication-cover">
   <div class="authentication-inner row m-0">
     <!-- /Left Text -->
-    <div class="d-none d-lg-flex col-lg-7 col-xl-8 align-items-center p-5">
-      <div class="w-100 px-5">
-        <h1 class="display-2 fw-bolder mb-4">JOIN OUR<br>COMMUNITY</h1>
-        <div class="text-large fw-light">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula ex eu gravida faucibus.
-          Suspendisse viverra pharetra purus. Proin fringilla ac lorem at sagittis. Proin tincidunt dui et nunc
-          ultricies dignissim.
+    <div class="d-none d-lg-flex col-lg-7 col-xl-8 align-items-center">
+      <div class="flex-row text-center mx-auto">
+        <img src="{{asset('assets/img/pages/register-'.$configData['style'].'.png')}}" alt="Auth Cover Bg color" width="520" class="img-fluid authentication-cover-img" data-app-light-img="pages/register-light.png" data-app-dark-img="pages/register-dark.png">
+        <div class="mx-auto">
+          <h3>A few clicks to get started 🚀</h3>
+          <p>
+            Let’s get started with your 14 days free trial and <br> start building your application today.
+          </p>
         </div>
       </div>
     </div>
@@ -27,10 +33,10 @@
     <div class="d-flex col-12 col-lg-5 col-xl-4 align-items-center authentication-bg p-sm-5 p-4">
       <div class="w-px-400 mx-auto">
         <!-- Logo -->
-        <div class="app-brand justify-content-center mb-5">
-          <a href="{{url('/')}}" class="app-brand-link gap-2">
-            <span class="app-brand-logo demo bg-primary">@include('_partials.macros',["height"=>20,"withbg"=>'fill: #fff;'])</span>
-            <span class="app-brand-text demo text-body fw-bold">{{config('variables.templateName')}}</span>
+        <div class="app-brand mb-4">
+          <a href="{{url('/')}}" class="app-brand-link gap-2 mb-2">
+            <span class="app-brand-logo demo">@include('_partials.macros')</span>
+            <span class="app-brand-text demo h3 mb-0 fw-bold">{{config('variables.templateName')}}</span>
           </a>
         </div>
         <!-- /Logo -->
@@ -61,7 +67,7 @@
           </div>
           <div class="mb-3 form-password-toggle">
             <label class="form-label" for="password">Password</label>
-            <div class="input-group input-group-merge">
+            <div class="input-group input-group-merge @error('password') is-invalid @enderror">
               <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
               <span class="input-group-text cursor-pointer">
                 <i class="bx bx-hide"></i>
@@ -99,9 +105,7 @@
             </div>
           </div>
           @endif
-          <button type="submit" class="btn btn-primary d-grid w-100">
-            Sign up
-          </button>
+          <button type="submit" class="btn btn-primary d-grid w-100">Sign up</button>
         </form>
 
         <p class="text-center mt-2">
