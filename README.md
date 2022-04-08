@@ -3,7 +3,7 @@
 [![Latest Stable Version](https://poser.pugx.org/pixinvent/frest-html-laravel-jetstream/v)](//packagist.org/packages/pixinvent/frest-html-laravel-jetstream)
 [![License](https://poser.pugx.org/pixinvent/frest-html-laravel-jetstream/license)](//packagist.org/packages/pixinvent/frest-html-laravel-jetstream)
 
-##### Specially customized Laravel jetstream's scaffolding for [Frest admin Template](#). It'll not work with any other project.
+##### Specially customized Laravel jetstream's scaffolding for [Frest html + laravel admin Template](https://1.envato.market/frest_admin). It'll not work with any other project.
 [Download from packagist](https://packagist.org/packages/pixinvent/frest-html-laravel-jetstream)
 
 ## Description
@@ -38,7 +38,6 @@ You may use Composer to install Jetstream into your new Laravel project:
 
 ```
 composer require laravel/jetstream
-
 ```
 
 If you choose to install Jetstream through Composer, you should run the jetstream:install Artisan command. This command accepts the name of the stack you prefer (livewire). You are highly encouraged to read through the entire documentation of Livewire before beginning your Jetstream project. In addition, you may use the __--teams__ switch to enable team support:
@@ -55,7 +54,6 @@ or
 // with teams support
 
 php artisan jetstream:install livewire --teams
-
 ```
 
 ### Install Frest Laravel Bootstrap Jetstream
@@ -63,10 +61,7 @@ php artisan jetstream:install livewire --teams
 Use Composer to install Frest Jetstream into your new Laravel project as dev dependency:
 
 ```
-
 composer require pixinvent/frest-html-laravel-jetstream --dev
- 
-
 ```
 
 Regardless how you install Jetstream, Frest Laravel Bootstrap Jetstream commands are very similar to that
@@ -84,13 +79,11 @@ before beginning your Frest Laravel Jetstream project. In addition, you may use 
 
 php artisan jetstream_frest:swap livewire
 
-
 or
 
 // with teams support
 
 php artisan jetstream_frest:swap livewire --teams
-
 ```
 
 This will publish overrides to enable Bootstrap like the good old days!
@@ -100,7 +93,6 @@ This will publish overrides to enable Bootstrap like the good old days!
 After installing Frest jetstream and swapping Jetstream resources, remove tailwindCSS and its dependencies if any from your package.json and then install and build your NPM dependencies and migrate your database:
 
 ```
-
 npm install && npm run dev
 
 or  
@@ -109,7 +101,6 @@ yarn && yarn dev
 
 
 php artisan migrate
-
 ```
 
 ### Extras
@@ -119,19 +110,14 @@ php artisan migrate
 It is also important to point out that Laravel still includes pagination views built using Bootstrap CSS. To use these views instead of the default Tailwind views, you may call the paginator's useBootstrap method within your AppServiceProvider:
 
 ```php
-
-  
-
 <?php
-
 
 namespace  App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 
-class  AppServiceProvider  extends  ServiceProvider
-{
+class  AppServiceProvider  extends  ServiceProvider{
 
 /**
 * Register any application services.
@@ -139,8 +125,7 @@ class  AppServiceProvider  extends  ServiceProvider
 * @return  void
 */
 
-public  function  register()
-{
+public  function  register(){
 
 //
   
@@ -151,15 +136,13 @@ public  function  register()
 * @return  void
 */
 
-public  function  boot()
-{
+public  function  boot(){
 
 Paginator::useBootstrap();
 
 }
 
 }
-
 ```
 
 ## Credits
