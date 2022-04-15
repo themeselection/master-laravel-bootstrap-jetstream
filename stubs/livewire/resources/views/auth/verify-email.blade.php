@@ -1,6 +1,6 @@
 @extends('layouts/blankLayout')
 
-@section('title', 'Login Page')
+@section('title', 'Verify Email')
 
 @section('page-style')
   {{-- Page Css files --}}
