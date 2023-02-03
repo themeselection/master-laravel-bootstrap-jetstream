@@ -20,6 +20,7 @@
     "@popperjs/core": "^2.11.6",
     "@simonwep/pickr": "~1.8.2",
     "@yaireo/tagify": "~4.16.4",
+    "alpinejs": "^3.9.0",
     "animate.css": "~4.1.1",
     "aos": "~2.3.4",
     "apexcharts-clevision": "^3.28.5",
