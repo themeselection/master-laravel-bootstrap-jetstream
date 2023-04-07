@@ -1,4 +1,4 @@
-@props(['team', 'component' => 'jet-dropdown-link'])
+@props(['team', 'component' => 'dropdown-link'])
 
 <x-dynamic-component :component="$component" href="#"
   onclick="event.preventDefault(); document.getElementById('switch-team-form-{{ $team->id }}').submit();">

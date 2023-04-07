@@ -76,7 +76,7 @@ class InstallCommand extends Command
     $this->replaceInFile('/dashboard', '/', app_path('Providers/RouteServiceProvider.php'));
 
     // add components in navbar
-    $this->replaceInFile('{{-- <x-jet-switchable-team :team="$team" /> --}}', '<x-jet-switchable-team :team="$team" />', resource_path('views/layouts/sections/navbar/navbar.blade.php'));
+    $this->replaceInFile('{{-- <x-switchable-team :team="$team" /> --}}', '<x-switchable-team :team="$team" />', resource_path('views/layouts/sections/navbar/navbar.blade.php'));
 
 
     // Bootstrap Configuration...

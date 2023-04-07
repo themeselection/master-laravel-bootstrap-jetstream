@@ -1,6 +1,6 @@
 <div>
   <!-- Generate API Token -->
-  <x-jet-form-section submit="createApiToken">
+  <x-form-section submit="createApiToken">
     <x-slot name="title">
       {{ __('Create API Token') }}
     </x-slot>
@@ -10,29 +10,29 @@
     </x-slot>
 
     <x-slot name="form">
-      <x-jet-action-message on="created">
+      <x-action-message on="created">
         {{ __('Created.') }}
-      </x-jet-action-message>
+      </x-action-message>
 
       <!-- Token Name -->
       <div class="mb-3">
-        <x-jet-label for="name" class="form-label" value="{{ __('Token Name') }}" />
-        <x-jet-input id="name" type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
+        <x-label for="name" class="form-label" value="{{ __('Token Name') }}" />
+        <x-input id="name" type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
           wire:model.defer="createApiTokenForm.name" autofocus />
-        <x-jet-input-error for="name" />
+        <x-input-error for="name" />
       </div>
 
       <!-- Token Permissions -->
       @if (Laravel\Jetstream\Jetstream::hasPermissions())
         <div>
-          <x-jet-label class="form-label" for="permissions" value="{{ __('Permissions') }}" />
+          <x-label class="form-label" for="permissions" value="{{ __('Permissions') }}" />
 
           <div class="mt-2 row">
             @foreach (Laravel\Jetstream\Jetstream::$permissions as $permission)
               <div class="col-6">
                 <div class="mb-3">
                   <div class="form-check">
-                    <x-jet-checkbox wire:model.defer="createApiTokenForm.permissions"
+                    <x-checkbox wire:model.defer="createApiTokenForm.permissions"
                       id="{{ 'create-' . $permission }}" :value="$permission" />
                     <label class="form-check-label" for="{{ 'create-' . $permission }}">
                       {{ $permission }}
@@ -47,17 +47,17 @@
     </x-slot>
 
     <x-slot name="actions">
-      <x-jet-button>
+      <x-button>
         {{ __('Create') }}
-      </x-jet-button>
+      </x-button>
     </x-slot>
-  </x-jet-form-section>
+  </x-form-section>
 
   @if ($this->user->tokens->isNotEmpty())
 
     <!-- Manage API Tokens -->
     <div class="mt-4">
-      <x-jet-action-section>
+      <x-action-section>
         <x-slot name="title">
           {{ __('Manage API Tokens') }}
         </x-slot>
@@ -98,12 +98,12 @@
             @endforeach
           </div>
         </x-slot>
-      </x-jet-action-section>
+      </x-action-section>
     </div>
   @endif
 
   <!-- Token Value Modal -->
-  <x-jet-dialog-modal wire:model="displayingToken">
+  <x-dialog-modal wire:model="displayingToken">
     <x-slot name="title">
       {{ __('API Token') }}
     </x-slot>
@@ -114,21 +114,21 @@
       </div>
 
       <div class="mb-3">
-        <x-jet-input x-ref="plaintextToken" type="text" readonly :value="$plainTextToken" autofocus autocomplete="off"
+        <x-input x-ref="plaintextToken" type="text" readonly :value="$plainTextToken" autofocus autocomplete="off"
           autocorrect="off" autocapitalize="off" spellcheck="false"
           @showing-token-modal.window="setTimeout(() => $refs.plaintextToken.select(), 250)" />
       </div>
     </x-slot>
 
     <x-slot name="footer">
-      <x-jet-secondary-button wire:click="$set('displayingToken', false)" wire:loading.attr="disabled">
+      <x-secondary-button wire:click="$set('displayingToken', false)" wire:loading.attr="disabled">
         {{ __('Close') }}
-      </x-jet-secondary-button>
+      </x-secondary-button>
     </x-slot>
-  </x-jet-dialog-modal>
+  </x-dialog-modal>
 
   <!-- API Token Permissions Modal -->
-  <x-jet-dialog-modal wire:model="managingApiTokenPermissions">
+  <x-dialog-modal wire:model="managingApiTokenPermissions">
     <x-slot name="title">
       {{ __('API Token Permissions') }}
     </x-slot>
@@ -139,7 +139,7 @@
           <div class="col-6">
             <div class="mb-3">
               <div class="form-check">
-                <x-jet-checkbox wire:model.defer="updateApiTokenForm.permissions" id="{{ 'update-' . $permission }}"
+                <x-checkbox wire:model.defer="updateApiTokenForm.permissions" id="{{ 'update-' . $permission }}"
                   :value="$permission" />
                 <label class="form-check-label" for="{{ 'update-' . $permission }}">
                   {{ $permission }}
@@ -152,18 +152,18 @@
     </x-slot>
 
     <x-slot name="footer">
-      <x-jet-secondary-button wire:click="$set('managingApiTokenPermissions', false)" wire:loading.attr="disabled">
+      <x-secondary-button wire:click="$set('managingApiTokenPermissions', false)" wire:loading.attr="disabled">
         {{ __('Cancel') }}
-      </x-jet-secondary-button>
+      </x-secondary-button>
 
-      <x-jet-button wire:click="updateApiToken" wire:loading.attr="disabled">
+      <x-button wire:click="updateApiToken" wire:loading.attr="disabled">
         {{ __('Save') }}
-      </x-jet-button>
+      </x-button>
     </x-slot>
-  </x-jet-dialog-modal>
+  </x-dialog-modal>
 
   <!-- Delete Token Confirmation Modal -->
-  <x-jet-confirmation-modal wire:model="confirmingApiTokenDeletion">
+  <x-confirmation-modal wire:model="confirmingApiTokenDeletion">
     <x-slot name="title">
       {{ __('Delete API Token') }}
     </x-slot>
@@ -173,13 +173,13 @@
     </x-slot>
 
     <x-slot name="footer">
-      <x-jet-secondary-button wire:click="$toggle('confirmingApiTokenDeletion')" wire:loading.attr="disabled">
+      <x-secondary-button wire:click="$toggle('confirmingApiTokenDeletion')" wire:loading.attr="disabled">
         {{ __('Cancel') }}
-      </x-jet-secondary-button>
+      </x-secondary-button>
 
-      <x-jet-danger-button wire:loading.attr="disabled" wire:click="deleteApiToken">
+      <x-danger-button wire:loading.attr="disabled" wire:click="deleteApiToken">
         {{ __('Delete') }}
-      </x-jet-danger-button>
+      </x-danger-button>
     </x-slot>
-  </x-jet-confirmation-modal>
+  </x-confirmation-modal>
 </div>

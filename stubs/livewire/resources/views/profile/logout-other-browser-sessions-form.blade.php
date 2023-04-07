@@ -1,4 +1,4 @@
-<x-jet-action-section>
+<x-action-section>
   <x-slot name="title">
     {{ __('Browser Sessions') }}
   </x-slot>
@@ -8,9 +8,9 @@
   </x-slot>
 
   <x-slot name="content">
-    <x-jet-action-message on="loggedOut">
+    <x-action-message on="loggedOut">
       {{ __('Done.') }}
-    </x-jet-action-message>
+    </x-action-message>
 
     <p class="card-text">
       {{ __('If necessary, you may log out of all of your other browser sessions across all of your devices. Some of your recent sessions are listed below; however, this list may not be exhaustive. If you feel your account has been compromised, you should also update your password.') }}
@@ -64,13 +64,13 @@
     @endif
 
     <div class="d-flex mt-3">
-      <x-jet-button wire:click="confirmLogout" wire:loading.attr="disabled">
+      <x-button wire:click="confirmLogout" wire:loading.attr="disabled">
         {{ __('Log Out Other Browser Sessions') }}
-      </x-jet-button>
+      </x-button>
     </div>
 
     <!-- Log out Other Devices Confirmation Modal -->
-    <x-jet-dialog-modal wire:model="confirmingLogout">
+    <x-dialog-modal wire:model="confirmingLogout">
       <x-slot name="title">
         {{ __('Log Out Other Browser Sessions') }}
       </x-slot>
@@ -80,25 +80,25 @@
 
         <div class="mt-3" x-data="{}"
           x-on:confirming-logout-other-browser-sessions.window="setTimeout(() => $refs.password.focus(), 250)">
-          <x-jet-input type="password" placeholder="{{ __('Password') }}" x-ref="password"
+          <x-input type="password" placeholder="{{ __('Password') }}" x-ref="password"
             class="{{ $errors->has('password') ? 'is-invalid' : '' }}" wire:model.defer="password"
             wire:keydown.enter="logoutOtherBrowserSessions" />
 
-          <x-jet-input-error for="password" class="mt-2" />
+          <x-input-error for="password" class="mt-2" />
         </div>
       </x-slot>
 
       <x-slot name="footer">
-        <x-jet-secondary-button wire:click="$toggle('confirmingLogout')" wire:loading.attr="disabled">
+        <x-secondary-button wire:click="$toggle('confirmingLogout')" wire:loading.attr="disabled">
           {{ __('Cancel') }}
-        </x-jet-secondary-button>
+        </x-secondary-button>
 
         <button class="btn btn-danger ms-1 text-uppercase" wire:click="logoutOtherBrowserSessions"
           wire:loading.attr="disabled">
           {{ __('Log out Other Browser Sessions') }}
         </button>
       </x-slot>
-    </x-jet-dialog-modal>
+    </x-dialog-modal>
   </x-slot>
 
-</x-jet-action-section>
+</x-action-section>

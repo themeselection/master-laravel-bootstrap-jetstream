@@ -1,4 +1,4 @@
-<x-jet-form-section submit="createTeam">
+<x-form-section submit="createTeam">
   <x-slot name="title">
     {{ __('Team Details') }}
   </x-slot>
@@ -9,7 +9,7 @@
 
   <x-slot name="form">
     <div class="mb-1">
-      <x-jet-label class="form-label" value="{{ __('Team Owner') }}" />
+      <x-label class="form-label" value="{{ __('Team Owner') }}" />
 
       <div class="d-flex mt-3">
         <img class="rounded-circle" width="48" src="{{ $this->user->profile_photo_url }}">
@@ -22,16 +22,16 @@
     </div>
 
     <div class="mb-3">
-      <x-jet-label class="form-label" for="name" value="{{ __('Team Name') }}" />
-      <x-jet-input id="name" type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
+      <x-label class="form-label" for="name" value="{{ __('Team Name') }}" />
+      <x-input id="name" type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
         wire:model.defer="state.name" autofocus />
-      <x-jet-input-error for="name" />
+      <x-input-error for="name" />
     </div>
   </x-slot>
 
   <x-slot name="actions">
-    <x-jet-button>
+    <x-button>
       {{ __('Create') }}
-    </x-jet-button>
+    </x-button>
   </x-slot>
-</x-jet-form-section>
+</x-form-section>
