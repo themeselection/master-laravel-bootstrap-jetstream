@@ -1,6 +1,6 @@
 @props(['style' => session('flash.bannerStyle', 'success'), 'message' => session('flash.banner')])
 
-<div class="alert alert-banner mb-0 d-none rounded-0"
+<div class="alert alert-banner mb-0 rounded-0"
      :class="{'bg-success': style == 'success', 'bg-danger': style == 'danger', 'bg-secondary': style != 'success' && style != 'danger'}"
      role="alert"
      x-data="{show: true, style: '{{ $style }}', message: '{{ $message }}'}"
@@ -11,7 +11,7 @@
             message = event.detail.message;
             show = true;
         });
-     ">
+     " style="display: none;">
      <div class="d-flex justify-content-between align-items-center">
          <div>
              <span class="badge rounded-pill py-2" :class="{'bg-success': style == 'success', 'bg-danger': style == 'danger'}">
