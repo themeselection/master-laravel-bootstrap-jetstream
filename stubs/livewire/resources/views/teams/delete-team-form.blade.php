@@ -1,4 +1,4 @@
-<x-jet-action-section>
+<x-action-section>
   <x-slot name="title">
     {{ __('Delete Team') }}
   </x-slot>
@@ -12,12 +12,12 @@
       {{ __('Once a team is deleted, all of its resources and data will be permanently deleted. Before deleting this team, please download any data or information regarding this team that you wish to retain.') }}
     </p>
 
-    <x-jet-danger-button wire:click="$toggle('confirmingTeamDeletion')" wire:loading.attr="disabled">
+    <x-danger-button wire:click="$toggle('confirmingTeamDeletion')" wire:loading.attr="disabled">
       {{ __('Delete Team') }}
-    </x-jet-danger-button>
+    </x-danger-button>
 
     <!-- Delete Team Confirmation Modal -->
-    <x-jet-confirmation-modal wire:model="confirmingTeamDeletion">
+    <x-confirmation-modal wire:model="confirmingTeamDeletion">
       <x-slot name="title">
         {{ __('Delete Team') }}
       </x-slot>
@@ -27,14 +27,14 @@
       </x-slot>
 
       <x-slot name="footer">
-        <x-jet-secondary-button wire:click="$toggle('confirmingTeamDeletion')" wire:loading.attr="disabled">
+        <x-secondary-button wire:click="$toggle('confirmingTeamDeletion')" wire:loading.attr="disabled">
           {{ __('Cancel') }}
-        </x-jet-secondary-button>
+        </x-secondary-button>
 
-        <x-jet-danger-button wire:click="deleteTeam" wire:loading.attr="disabled">
+        <x-danger-button wire:click="deleteTeam" wire:loading.attr="disabled">
           {{ __('Delete Team') }}
-        </x-jet-danger-button>
+        </x-danger-button>
       </x-slot>
-    </x-jet-confirmation-modal>
+    </x-confirmation-modal>
   </x-slot>
-</x-jet-action-section>
+</x-action-section>

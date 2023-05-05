@@ -1,4 +1,4 @@
-<x-jet-form-section submit="updateProfileInformation">
+<x-form-section submit="updateProfileInformation">
   <x-slot name="title">
     {{ __('Profile Information') }}
   </x-slot>
@@ -9,9 +9,9 @@
 
   <x-slot name="form">
 
-    <x-jet-action-message on="saved">
+    <x-action-message on="saved">
       {{ __('Saved.') }}
-    </x-jet-action-message>
+    </x-action-message>
 
     <!-- Profile Photo -->
     @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
@@ -30,9 +30,9 @@
           <img x-bind:src="photoPreview" class="rounded-circle" width="80px" height="80px">
         </div>
 
-        <x-jet-secondary-button class="mt-2 me-2" type="button" x-on:click.prevent="$refs.photo.click()">
+        <x-secondary-button class="mt-2 me-2" type="button" x-on:click.prevent="$refs.photo.click()">
           {{ __('Select A New Photo') }}
-        </x-jet-secondary-button>
+        </x-secondary-button>
 
         @if ($this->user->profile_photo_path)
           <button type="button" class="btn btn-danger text-uppercase mt-2" wire:click="deleteProfilePhoto">
@@ -40,32 +40,32 @@
           </button>
         @endif
 
-        <x-jet-input-error for="photo" class="mt-2" />
+        <x-input-error for="photo" class="mt-2" />
       </div>
     @endif
 
     <!-- Name -->
     <div class="mb-3">
-      <x-jet-label class="form-label" for="name" value="{{ __('Name') }}" />
-      <x-jet-input id="name" type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
+      <x-label class="form-label" for="name" value="{{ __('Name') }}" />
+      <x-input id="name" type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
         wire:model.defer="state.name" autocomplete="name" />
-      <x-jet-input-error for="name" />
+      <x-input-error for="name" />
     </div>
 
     <!-- Email -->
     <div class="mb-3">
-      <x-jet-label class="form-label" for="email" value="{{ __('Email') }}" />
-      <x-jet-input id="email" type="email" class="{{ $errors->has('email') ? 'is-invalid' : '' }}"
+      <x-label class="form-label" for="email" value="{{ __('Email') }}" />
+      <x-input id="email" type="email" class="{{ $errors->has('email') ? 'is-invalid' : '' }}"
         wire:model.defer="state.email" />
-      <x-jet-input-error for="email" />
+      <x-input-error for="email" />
     </div>
   </x-slot>
 
   <x-slot name="actions">
     <div class="d-flex align-items-baseline">
-      <x-jet-button>
+      <x-button>
         {{ __('Save') }}
-      </x-jet-button>
+      </x-button>
     </div>
   </x-slot>
-</x-jet-form-section>
+</x-form-section>

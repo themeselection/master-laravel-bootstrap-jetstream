@@ -45,8 +45,8 @@ $customizerHidden = 'customizer-hide';
         <form id="twoStepsForm" action="{{ route('password.confirm') }}" method="POST">
           @csrf
           <div class="mb-3 form-password-toggle">
-            <label class="form-label" for="password">Your Password</label>
-            <div class="input-group input-group-merge">
+            <label class="form-label" for="password">New Password</label>
+            <div class="input-group input-group-merge @error('password') is-invalid @enderror">
               <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
               <span class="input-group-text cursor-pointer">
                 <i class="bx bx-hide"></i>

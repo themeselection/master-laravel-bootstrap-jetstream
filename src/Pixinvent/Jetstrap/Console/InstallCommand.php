@@ -37,6 +37,13 @@ class InstallCommand extends Command
       (new Filesystem)->delete(base_path('tailwind.config.js'));
     }
 
+    if ((new Filesystem)->exists(base_path('postcss.config.js'))) {
+      (new Filesystem)->delete(base_path('postcss.config.js'));
+    }
+    if ((new Filesystem)->exists(base_path('vite.config.js'))) {
+      (new Filesystem)->delete(base_path('vite.config.js'));
+    }
+
     if ((new Filesystem)->exists(resource_path('views/dashboard.blade.php'))) {
       (new Filesystem)->delete(resource_path('views/dashboard.blade.php'));
     }
@@ -69,7 +76,10 @@ class InstallCommand extends Command
     $this->replaceInFile('/dashboard', '/', app_path('Providers/RouteServiceProvider.php'));
 
     // add components in navbar
-    $this->replaceInFile('{{-- <x-jet-switchable-team :team="$team" /> --}}', '<x-jet-switchable-team :team="$team" />', resource_path('views/layouts/sections/navbar/navbar.blade.php'));
+    $this->replaceInFile('{{-- <x-switchable-team :team="$team" /> --}}', '<x-switchable-team :team="$team" />', resource_path('views/layouts/sections/navbar/navbar.blade.php'));
+    $this->replaceInFile('{{-- <x-banner /> --}}', '<x-banner />', resource_path('views/layouts/contentNavbarLayout.blade.php'));
+    $this->replaceInFile('{{-- <x-banner /> --}}', '<x-banner />', resource_path('views/layouts/horizontalLayout.blade.php'));
+    $this->replaceInFile('{{-- <x-banner /> --}}', '<x-banner />', resource_path('views/layouts/navbarFullLayout.blade.php'));
 
 
     // Bootstrap Configuration...
