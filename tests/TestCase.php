@@ -1,10 +1,10 @@
 <?php
 
-namespace Themeselection\Jetstrap\Tests;
+namespace Pixinvent\Jetstrap\Tests;
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Foundation\Application;
-use Themeselection\Jetstrap\JetstrapServiceProvider;
+use Pixinvent\Jetstrap\JetstrapServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {

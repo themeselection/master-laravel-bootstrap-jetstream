@@ -1,6 +1,6 @@
 <?php
 
-namespace Themeselection\Jetstrap\Console;
+namespace Pixinvent\Jetstrap\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -13,7 +13,7 @@ class InstallCommand extends Command
    *
    * @var string
    */
-  protected $signature = 'jetstream_master:swap {stack : The development stack that should be installed}
+  protected $signature = 'jetstream_frest:swap {stack : The development stack that should be installed}
                                               {--teams : Indicates if team support should be installed}';
 
   /**
@@ -79,7 +79,6 @@ class InstallCommand extends Command
     $this->replaceInFile('{{-- <x-switchable-team :team="$team" /> --}}', '<x-switchable-team :team="$team" />', resource_path('views/layouts/sections/navbar/navbar.blade.php'));
     $this->replaceInFile('{{-- <x-banner /> --}}', '<x-banner />', resource_path('views/layouts/contentNavbarLayout.blade.php'));
     $this->replaceInFile('{{-- <x-banner /> --}}', '<x-banner />', resource_path('views/layouts/horizontalLayout.blade.php'));
-    $this->replaceInFile('{{-- <x-banner /> --}}', '<x-banner />', resource_path('views/layouts/navbarFullLayout.blade.php'));
 
 
     // Bootstrap Configuration...
