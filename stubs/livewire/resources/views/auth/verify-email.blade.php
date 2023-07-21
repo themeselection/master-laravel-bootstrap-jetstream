@@ -1,9 +1,10 @@
 @php
+$pageConfigs = ['myLayout' => 'blank'];
 $configData = Helper::appClasses();
 $customizerHidden = 'customizer-hide';
 @endphp
 
-@extends('layouts/blankLayout')
+@extends('layouts/layoutMaster')
 
 @section('title', 'Verify Email')
 
