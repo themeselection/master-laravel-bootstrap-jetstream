@@ -54,7 +54,7 @@ $customizerHidden = 'customizer-hide';
         </div>
         @endif
         <p class="text-start">
-          Account activation link sent to your email address: <strong>{{Auth::user()->email}}</strong> Please follow the link inside to continue.
+          Account activation link sent to your email address: <span class="fw-medium">{{Auth::user()->email}}</span> Please follow the link inside to continue.
         </p>
         <div class="mt-4 d-flex justify-content-between">
           <form method="POST" action="{{ route('verification.send') }}">
