@@ -42,11 +42,10 @@ $customizerHidden = 'customizer-hide';
         <!-- /Logo -->
         <h4 class="mb-3">Confirm Password</h4>
         <p class="text-start mb-4">Please confirm your password before continuing.</p>
-        <p class="mb-0 fw-medium">Type your 6 digit security code</p>
+        <p class="fw-medium">Type your security code here</p>
         <form id="twoStepsForm" action="{{ route('password.confirm') }}" method="POST">
           @csrf
           <div class="mb-3 form-password-toggle">
-            <label class="form-label" for="password">New Password</label>
             <div class="input-group input-group-merge @error('password') is-invalid @enderror">
               <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
               <span class="input-group-text cursor-pointer">
