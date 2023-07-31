@@ -1,9 +1,10 @@
 @php
+$pageConfigs = ['myLayout' => 'blank'];
 $configData = Helper::appClasses();
 $customizerHidden = 'customizer-hide';
 @endphp
 
-@extends('layouts/blankLayout')
+@extends('layouts/layoutMaster')
 
 @section('title', '2 Factor Challenge')
 
@@ -36,7 +37,7 @@ $customizerHidden = 'customizer-hide';
         <!-- Logo -->
         <div class="app-brand justify-content-center mb-5">
           <a href="{{url('/')}}" class="app-brand-link gap-2 mb-2">
-            <span class="app-brand-logo demo">@include('_partials.macros')</span>
+            <span class="app-brand-logo demo">@include('_partials.macros',['height'=>20,'withbg' => "fill: #fff;"])</span>
             <span class="app-brand-text demo h3 mb-0 fw-bold">{{ config('variables.templateName') }}</span>
           </a>
         </div>

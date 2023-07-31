@@ -1,4 +1,8 @@
-@extends('layouts/blankLayout')
+@php
+$pageConfigs = ['myLayout' => 'blank'];
+@endphp
+
+@extends('layouts/layoutMaster')
 
 @section('title', 'Login')
 

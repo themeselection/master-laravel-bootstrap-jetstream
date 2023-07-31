@@ -1,6 +1,6 @@
 <?php
 
-namespace Pixinvent\Jetstrap;
+namespace Themeselection\Jetstrap;
 
 class Jetstrap
 {
