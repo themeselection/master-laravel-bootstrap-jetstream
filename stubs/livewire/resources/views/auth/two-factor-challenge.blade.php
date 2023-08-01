@@ -1,10 +1,9 @@
 @php
-$pageConfigs = ['myLayout' => 'blank'];
 $configData = Helper::appClasses();
 $customizerHidden = 'customizer-hide';
 @endphp
 
-@extends('layouts/layoutMaster')
+@extends('layouts/blankLayout')
 
 @section('title', '2 Factor Challenge')
 
