@@ -39,7 +39,7 @@
         </div>
 
         <div class="mt-4">
-            <p class="font-semibold">
+            <p class="fw-medium">
               {{ __('Setup Key') }}: {{ decrypt($this->user->two_factor_secret) }}
             </p>
         </div>

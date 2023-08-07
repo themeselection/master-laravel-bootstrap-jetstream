@@ -51,7 +51,7 @@
                   {{ $session->ip_address }},
 
                   @if ($session->is_current_device)
-                    <span class="text-success fw-bolder">{{ __('This device') }}</span>
+                    <span class="text-success fw-medium">{{ __('This device') }}</span>
                   @else
                     {{ __('Last active') }} {{ $session->last_active }}
                   @endif

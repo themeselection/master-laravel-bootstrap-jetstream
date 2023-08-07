@@ -71,7 +71,7 @@
           <div>
             @foreach ($this->user->tokens->sortBy('name') as $token)
               <div class="d-flex justify-content-between">
-                <div class="fw-bolder">
+                <div class="fw-medium">
                   {{ $token->name }}
                 </div>
 

@@ -32,7 +32,7 @@
         @if (count($this->roles) > 0)
           <div class="my-3">
             <div class="mb-3">
-              <x-label class="fw-bolder" for="role" value="{{ __('Role') }}" />
+              <x-label class="fw-medium" for="role" value="{{ __('Role') }}" />
 
               <input type="hidden" class="{{ $errors->has('role') ? 'is-invalid' : '' }}">
               <x-input-error for="role" />
@@ -43,7 +43,7 @@
                 <a href="#" class="list-group-item list-group-item-action"
                   wire:click.prevent="$set('addTeamMemberForm.role', '{{ $role->key }}')">
                   <div>
-                    <span class="{{ $addTeamMemberForm['role'] == $role->key ? 'fw-bold' : '' }}">
+                    <span class="{{ $addTeamMemberForm['role'] == $role->key ? 'fw-medium' : '' }}">
                       {{ $role->name }}
                     </span>
                     @if ($addTeamMemberForm['role'] == $role->key)
@@ -128,7 +128,7 @@
               <div class="pe-2">
                 <img width="32" class="rounded-circle" src="{{ $user->profile_photo_url }}">
               </div>
-              <span class="fw-bolder">{{ $user->name }}</span>
+              <span class="fw-medium">{{ $user->name }}</span>
             </div>
 
             <div class="d-flex">
@@ -177,7 +177,7 @@
           <a href="#" class="list-group-item list-group-item-action"
             wire:click.prevent="$set('currentRole', '{{ $role->key }}')">
             <div>
-              <span class="{{ $currentRole == $role->key ? 'fw-bold' : '' }}">
+              <span class="{{ $currentRole == $role->key ? 'fw-medium' : '' }}">
                 {{ $role->name }}
               </span>
               @if ($currentRole == $role->key)
