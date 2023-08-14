@@ -90,20 +90,25 @@ $customizerHidden = 'customizer-hide';
             </div>
           </div>
           @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-          <div class="mb-1">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="terms" name="terms" />
-              <label class="form-check-label" for="terms">
+            <div class="mb-3">
+              <div class="form-check @error('terms') is-invalid @enderror">
+                <input class="form-check-input @error('terms') is-invalid @enderror" type="checkbox" id="terms" name="terms" />
+                <label class="form-check-label" for="terms">
                 I agree to the
-                <a href="{{ route('terms.show') }}" target="_blank">
+                    <a href="{{ route('terms.show') }}" target="_blank">
                   terms_of_service
                 </a> and
-                <a href="{{ route('policy.show') }}" target="_blank">
+                    <a href="{{ route('policy.show') }}" target="_blank">
                   privacy_policy
-                </a>
-              </label>
+                    </a>
+                </label>
+              </div>
+              @error('terms')
+                <div class="invalid-feedback" role="alert">
+                    <span class="fw-medium">{{ $message }}</span>
+                </div>
+              @enderror
             </div>
-          </div>
           @endif
           <button type="submit" class="btn btn-primary d-grid w-100">Sign up</button>
         </form>
