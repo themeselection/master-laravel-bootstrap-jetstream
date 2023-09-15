@@ -1,4 +1,1 @@
-import * as alpine from 'alpinejs/dist/cdn';
-
-
-export { alpine };
+// Add your custom javascript code here

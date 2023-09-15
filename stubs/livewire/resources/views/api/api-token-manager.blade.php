@@ -18,7 +18,7 @@
       <div class="mb-3">
         <x-label for="name" class="form-label" value="{{ __('Token Name') }}" />
         <x-input id="name" type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
-          wire:model.defer="createApiTokenForm.name" autofocus />
+          wire:model="createApiTokenForm.name" autofocus />
         <x-input-error for="name" />
       </div>
 
@@ -32,7 +32,7 @@
               <div class="col-6">
                 <div class="mb-3">
                   <div class="form-check">
-                    <x-checkbox wire:model.defer="createApiTokenForm.permissions"
+                    <x-checkbox wire:model="createApiTokenForm.permissions"
                       id="{{ 'create-' . $permission }}" :value="$permission" />
                     <label class="form-check-label" for="{{ 'create-' . $permission }}">
                       {{ $permission }}
@@ -103,7 +103,7 @@
   @endif
 
   <!-- Token Value Modal -->
-  <x-dialog-modal wire:model="displayingToken">
+  <x-dialog-modal wire:model.live="displayingToken">
     <x-slot name="title">
       {{ __('API Token') }}
     </x-slot>
@@ -128,7 +128,7 @@
   </x-dialog-modal>
 
   <!-- API Token Permissions Modal -->
-  <x-dialog-modal wire:model="managingApiTokenPermissions">
+  <x-dialog-modal wire:model.live="managingApiTokenPermissions">
     <x-slot name="title">
       {{ __('API Token Permissions') }}
     </x-slot>
@@ -139,7 +139,7 @@
           <div class="col-6">
             <div class="mb-3">
               <div class="form-check">
-                <x-checkbox wire:model.defer="updateApiTokenForm.permissions" id="{{ 'update-' . $permission }}"
+                <x-checkbox wire:model="updateApiTokenForm.permissions" id="{{ 'update-' . $permission }}"
                   :value="$permission" />
                 <label class="form-check-label" for="{{ 'update-' . $permission }}">
                   {{ $permission }}
@@ -163,7 +163,7 @@
   </x-dialog-modal>
 
   <!-- Delete Token Confirmation Modal -->
-  <x-confirmation-modal wire:model="confirmingApiTokenDeletion">
+  <x-confirmation-modal wire:model.live="confirmingApiTokenDeletion">
     <x-slot name="title">
       {{ __('Delete API Token') }}
     </x-slot>

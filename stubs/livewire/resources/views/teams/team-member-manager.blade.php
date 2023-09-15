@@ -24,7 +24,7 @@
         <div class="mb-3">
           <x-label class="form-label" for="email" value="{{ __('Email') }}" />
           <x-input id="name" type="email" class="{{ $errors->has('email') ? 'is-invalid' : '' }}"
-            wire:model.defer="addTeamMemberForm.email" />
+            wire:model="addTeamMemberForm.email" />
           <x-input-error for="email" />
         </div>
 
@@ -126,7 +126,7 @@
           <div class="d-flex justify-content-between mt-2 mb-2">
             <div class="d-flex align-items-center">
               <div class="pe-2">
-                <img width="32" class="rounded-circle" src="{{ $user->profile_photo_url }}">
+                <img width="32" class="rounded-circle" src="{{ $user->profile_photo_url }}" alt="{{ $user->name }}">
               </div>
               <span class="fw-medium">{{ $user->name }}</span>
             </div>
@@ -166,7 +166,7 @@
   @endif
 
   <!-- Role Management Modal -->
-  <x-dialog-modal wire:model="currentlyManagingRole">
+  <x-dialog-modal wire:model.live="currentlyManagingRole">
     <x-slot name="title">
       {{ __('Manage Role') }}
     </x-slot>
@@ -209,7 +209,7 @@
   </x-dialog-modal>
 
   <!-- Leave Team Confirmation Modal -->
-  <x-confirmation-modal wire:model="confirmingLeavingTeam">
+  <x-confirmation-modal wire:model.live="confirmingLeavingTeam">
     <x-slot name="title">
       {{ __('Leave Team') }}
     </x-slot>
@@ -230,7 +230,7 @@
   </x-confirmation-modal>
 
   <!-- Remove Team Member Confirmation Modal -->
-  <x-confirmation-modal wire:model="confirmingTeamMemberRemoval">
+  <x-confirmation-modal wire:model.live="confirmingTeamMemberRemoval">
     <x-slot name="title">
       {{ __('Remove Team Member') }}
     </x-slot>

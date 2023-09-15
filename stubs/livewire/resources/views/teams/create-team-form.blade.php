@@ -12,7 +12,7 @@
       <x-label class="form-label" value="{{ __('Team Owner') }}" />
 
       <div class="d-flex mt-3">
-        <img class="rounded-circle" width="48" src="{{ $this->user->profile_photo_url }}">
+        <img class="rounded-circle" width="48" src="{{ $this->user->profile_photo_url }}" alt="{{ $this->user->name }}">
 
         <div class="ms-2">
           <div>{{ $this->user->name }}</div>
@@ -24,7 +24,7 @@
     <div class="mb-3">
       <x-label class="form-label" for="name" value="{{ __('Team Name') }}" />
       <x-input id="name" type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
-        wire:model.defer="state.name" autofocus />
+        wire:model="state.name" autofocus />
       <x-input-error for="name" />
     </div>
   </x-slot>
