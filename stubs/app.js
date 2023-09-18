@@ -1,1 +1,3 @@
-// Add your custom javascript code here
+/*
+  Add custom scripts here
+*/
