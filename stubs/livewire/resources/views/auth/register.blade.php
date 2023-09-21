@@ -29,7 +29,7 @@ $customizerHidden = 'customizer-hide';
     </div>
     <!-- /Left Text -->
 
-    <!-- Register Card -->
+    <!-- Register -->
     <div class="d-flex col-12 col-lg-5 col-xl-4 align-items-center authentication-bg p-sm-5 p-4">
       <div class="w-px-400 mx-auto">
         <!-- Logo -->
@@ -41,7 +41,7 @@ $customizerHidden = 'customizer-hide';
         </div>
         <!-- /Logo -->
 
-        <!-- Register Card -->
+        <!-- Register -->
         <h4 class="mb-2">Adventure starts here 🚀</h4>
         <p class="mb-4">Make your app management easy and fun!</p>
 
@@ -94,13 +94,9 @@ $customizerHidden = 'customizer-hide';
               <div class="form-check @error('terms') is-invalid @enderror">
                 <input class="form-check-input @error('terms') is-invalid @enderror" type="checkbox" id="terms" name="terms" />
                 <label class="form-check-label" for="terms">
-                I agree to the
-                    <a href="{{ route('terms.show') }}" target="_blank">
-                  terms_of_service
-                </a> and
-                    <a href="{{ route('policy.show') }}" target="_blank">
-                  privacy_policy
-                    </a>
+                  I agree to the
+                  <a href="{{ route('policy.show') }}" target="_blank">privacy policy</a> &
+                  <a href="{{ route('terms.show') }}" target="_blank">terms</a>
                 </label>
               </div>
               @error('terms')
@@ -141,7 +137,7 @@ $customizerHidden = 'customizer-hide';
         </div>
       </div>
     </div>
-    <!-- Register Card -->
+    <!-- /Register -->
   </div>
 </div>
 @endsection

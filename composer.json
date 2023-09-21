@@ -18,9 +18,9 @@
     "php": "^8.1"
   },
   "require-dev": {
-    "laravel/jetstream": "^3.1",
+    "laravel/jetstream": "^4.0",
     "orchestra/testbench": "^8.3.0",
-    "phpunit/phpunit": "^10.0"
+    "phpunit/phpunit": "^10.1"
   },
   "autoload": {
     "psr-4": {

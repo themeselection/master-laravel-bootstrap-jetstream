@@ -70,7 +70,7 @@
     </div>
 
     <!-- Log out Other Devices Confirmation Modal -->
-    <x-dialog-modal wire:model="confirmingLogout">
+    <x-dialog-modal wire:model.live="confirmingLogout">
       <x-slot name="title">
         {{ __('Log Out Other Browser Sessions') }}
       </x-slot>
@@ -81,7 +81,7 @@
         <div class="mt-3" x-data="{}"
           x-on:confirming-logout-other-browser-sessions.window="setTimeout(() => $refs.password.focus(), 250)">
           <x-input type="password" placeholder="{{ __('Password') }}" x-ref="password"
-            class="{{ $errors->has('password') ? 'is-invalid' : '' }}" wire:model.defer="password"
+            class="{{ $errors->has('password') ? 'is-invalid' : '' }}" wire:model="password"
             wire:keydown.enter="logoutOtherBrowserSessions" />
 
           <x-input-error for="password" class="mt-2" />

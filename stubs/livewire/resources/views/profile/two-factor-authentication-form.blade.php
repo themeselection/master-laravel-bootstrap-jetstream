@@ -8,7 +8,7 @@
   </x-slot>
 
   <x-slot name="content">
-    <h6 class="fw-bolder">
+    <h6>
       @if ($this->enabled)
         @if ($showingConfirmation)
           {{ __('You are enabling two factor authentication.') }}
@@ -48,7 +48,7 @@
           <div class="mt-2">
             <x-label for="code" value="{{ __('Code') }}" />
             <x-input id="code" class="d-block mt-3 w-100" type="text" inputmode="numeric" name="code" autofocus autocomplete="one-time-code"
-                wire:model.defer="code"
+                wire:model="code"
                 wire:keydown.enter="confirmTwoFactorAuthentication" />
             <x-input-error for="code" class="mt-3" />
           </div>
