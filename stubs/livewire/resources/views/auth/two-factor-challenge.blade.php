@@ -72,7 +72,7 @@ $customizerHidden = 'customizer-hide';
               <button type="button" class="btn btn-outline-secondary me-1" x-show="! recovery" x-on:click="recovery = true; $nextTick(() => { $refs.recovery_code.focus()})">Use a recovery code
               </button>
 
-              <button type="button" class="btn btn-outline-secondary me-1" x-show="recovery" x-on:click=" recovery = false; $nextTick(() => { $refs.code.focus() })">
+              <button type="button" class="btn btn-outline-secondary me-1" x-cloak x-show="recovery" x-on:click=" recovery = false; $nextTick(() => { $refs.code.focus() })">
                 Use an authentication code
               </button>
 
