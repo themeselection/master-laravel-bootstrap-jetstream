@@ -8,8 +8,8 @@ $customizerHidden = 'customizer-hide';
 @section('title', '2 Factor Challenge')
 
 @section('page-style')
-{{-- Page Css files --}}
-<link rel="stylesheet" href="{{ asset(mix('assets/vendor/css/pages/page-auth.css')) }}">
+<!-- Page -->
+@vite('resources/assets/vendor/scss/pages/page-auth.scss')
 @endsection
 
 @section('content')

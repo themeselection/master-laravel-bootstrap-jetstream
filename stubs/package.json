@@ -3,14 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "npm run development",
-    "build": "npm run build",
-    "development": "mix",
-    "watch": "mix watch",
-    "watch-poll": "mix watch -- --watch-options-poll=1000",
-    "hot": "mix watch --hot",
-    "prod": "npm run production",
-    "production": "mix --production"
+    "dev": "vite",
+    "build": "vite build"
   },
   "devDependencies": {
     "@babel/core": "7.22.5",
@@ -19,19 +13,23 @@
     "@babel/plugin-transform-runtime": "7.22.9",
     "@babel/preset-env": "7.22.5",
     "@prettier/plugin-php": "0.19.6",
+    "@rollup/plugin-html": "1.0.3",
+    "@types/typeahead": "0.11.32",
     "ajv": "8.12.0",
+    "autoprefixer": "10.4.16",
     "axios": "1.4.0",
     "babel-loader": "9.1.2",
     "browser-sync": "2.29.3",
     "browser-sync-webpack-plugin": "2.3.0",
     "cross-env": "7.0.3",
-    "laravel-mix": "6.0.49",
+    "glob": "10.3.10",
     "lodash": "4.17.21",
     "postcss": "8.4.26",
     "prettier": "2.8.8",
     "resolve-url-loader": "5.0.0",
     "sass": "1.68.0",
-    "sass-loader": "13.3.2"
+    "sass-loader": "13.3.2",
+    "vite": "4.0.0"
   },
   "overrides": {
     "autoprefixer": "10.4.14",
@@ -85,6 +83,15 @@
     ]
   },
   "dependencies": {
+    "@form-validation/bundle": "2.4.0",
+    "@form-validation/core": "2.4.0",
+    "@form-validation/plugin-alias": "2.4.0",
+    "@form-validation/plugin-auto-focus": "2.4.0",
+    "@form-validation/plugin-bootstrap5": "2.4.0",
+    "@form-validation/plugin-excluded": "2.4.0",
+    "@form-validation/plugin-field-status": "2.4.0",
+    "@form-validation/plugin-framework": "2.4.0",
+    "@form-validation/plugin-message": "2.4.0",
     "@fortawesome/fontawesome-free": "6.4.0",
     "@fullcalendar/core": "6.1.9",
     "@fullcalendar/daygrid": "6.1.9",
@@ -134,6 +141,7 @@
     "jstree": "3.3.15",
     "jszip": "3.10.1",
     "katex": "0.16.8",
+    "laravel-vite-plugin": "0.8.0",
     "leaflet": "1.9.4",
     "mapbox-gl": "2.15.0",
     "masonry-layout": "4.2.2",
