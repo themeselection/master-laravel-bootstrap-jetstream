@@ -37,13 +37,6 @@ class InstallCommand extends Command
       (new Filesystem)->delete(base_path('tailwind.config.js'));
     }
 
-    if ((new Filesystem)->exists(base_path('postcss.config.js'))) {
-      (new Filesystem)->delete(base_path('postcss.config.js'));
-    }
-    if ((new Filesystem)->exists(base_path('vite.config.js'))) {
-      (new Filesystem)->delete(base_path('vite.config.js'));
-    }
-
     if ((new Filesystem)->exists(resource_path('views/dashboard.blade.php'))) {
       (new Filesystem)->delete(resource_path('views/dashboard.blade.php'));
     }
@@ -82,7 +75,7 @@ class InstallCommand extends Command
 
 
     // Bootstrap Configuration...
-    copy(__DIR__ . '/../../../../stubs/webpack.mix.js', base_path('webpack.mix.js'));
+    // copy(__DIR__ . '/../../../../stubs/webpack.mix.js', base_path('webpack.mix.js'));
 
     // app/views
     (new Filesystem)->deleteDirectory(app_path('View'));
