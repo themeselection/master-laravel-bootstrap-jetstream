@@ -75,7 +75,7 @@ class InstallCommand extends Command
 
 
     // Bootstrap Configuration...
-    // copy(__DIR__ . '/../../../../stubs/webpack.mix.js', base_path('webpack.mix.js'));
+    copy(__DIR__ . '/../../../../stubs/webpack.mix.js', base_path('webpack.mix.js'));
 
     // app/views
     (new Filesystem)->deleteDirectory(app_path('View'));
