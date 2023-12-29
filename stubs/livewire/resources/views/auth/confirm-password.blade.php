@@ -41,7 +41,7 @@ $customizerHidden = 'customizer-hide';
         <!-- /Logo -->
         <h4 class="mb-3">Confirm Password</h4>
         <p class="text-start mb-4">Please confirm your password before continuing.</p>
-        <p class="fw-medium">Type your security code here</p>
+        <p class="fw-medium">Enter your password</p>
         <form id="twoStepsForm" action="{{ route('password.confirm') }}" method="POST">
           @csrf
           <div class="mb-3 form-password-toggle">
