@@ -57,10 +57,6 @@ class InstallCommand extends Command
       (new Filesystem)->delete(resource_path('views/layouts/guest.blade.php'));
     }
 
-    // if ((new Filesystem)->exists(resource_path('js/app.js'))) {
-    //   copy(__DIR__ . '/../../../../stubs/app.js', resource_path('js/app.js'));
-    // }
-
     if ((new Filesystem)->exists(resource_path('js/bootstrap.js'))) {
       (new Filesystem)->delete(resource_path('js/bootstrap.js'));
     }
@@ -72,10 +68,6 @@ class InstallCommand extends Command
     $this->replaceInFile('{{-- <x-switchable-team :team="$team" /> --}}', '<x-switchable-team :team="$team" />', resource_path('views/layouts/sections/navbar/navbar.blade.php'));
     $this->replaceInFile('{{-- <x-banner /> --}}', '<x-banner />', resource_path('views/layouts/contentNavbarLayout.blade.php'));
     $this->replaceInFile('{{-- <x-banner /> --}}', '<x-banner />', resource_path('views/layouts/horizontalLayout.blade.php'));
-
-
-    // Bootstrap Configuration...
-    // copy(__DIR__ . '/../../../../stubs/webpack.mix.js', base_path('webpack.mix.js'));
 
     // app/views
     (new Filesystem)->deleteDirectory(app_path('View'));
