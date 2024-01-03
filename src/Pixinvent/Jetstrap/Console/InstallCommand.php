@@ -132,7 +132,7 @@ class InstallCommand extends Command
 
     $this->line('');
     $this->info('Bootstrap scaffolding swapped for livewire successfully.');
-    $this->comment('Please execute the "npm install && npm run dev" OR "yarn && yarn dev" command to build your assets.');
+    $this->comment('Please execute the "npm install && npm run build" OR "yarn && yarn build" command to build your assets.');
   }
 
   /**

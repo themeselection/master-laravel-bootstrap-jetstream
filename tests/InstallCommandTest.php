@@ -12,7 +12,7 @@ class InstallCommandTest extends TestCase
     // Run the make command
     $this->artisan('jetstream_master:swap livewire')
       ->expectsOutput('Bootstrap scaffolding swapped for livewire successfully.')
-      ->expectsOutput('Please execute the "npm install && npm run dev" command to build your assets.')
+      ->expectsOutput('Please execute the "npm install && npm run build" command to build your assets.')
       ->assertExitCode(0);
 
     $this->basicTests();
@@ -25,7 +25,7 @@ class InstallCommandTest extends TestCase
     // Run the make command
     $this->artisan('jetstream_master:swap livewire --teams')
       ->expectsOutput('Bootstrap scaffolding swapped for livewire successfully.')
-      ->expectsOutput('Please execute the "npm install && npm run dev" command to build your assets.')
+      ->expectsOutput('Please execute the "npm install && npm run build" command to build your assets.')
       ->assertExitCode(0);
 
     $this->basicTests();

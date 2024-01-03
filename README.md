@@ -14,21 +14,19 @@ Master Laravel Jetstream is a lightweight laravel package that focuses on the `V
 
 ## Table of Content
 
-* [Installation](#installation)
-
-* [Installing Jetstream](#installing-jetstream)
-
-* [Install Jetstream With Livewire](#install-jetstream-with-livewire)
-
-* [Install Master Laravel Bootstrap Jetstream](#install-master-laravel-bootstrap-jetstream)
-
-* [Finalizing The Installation](#finalizing-the-installation)
-
-* [Extras](#extras)
-
-* [Pagination](#pagination)
-  
-* [License](#license)
+- [master-laravel-bootstrap-jetstream](#master-laravel-bootstrap-jetstream)
+        - [Specially customized Laravel jetstream's scaffolding for Master html + laravel admin Template. It'll not work with any other project.](#specially-customized-laravel-jetstreams-scaffolding-for-master-html--laravel-admin-template-itll-not-work-with-any-other-project)
+  - [Description](#description)
+  - [Table of Content](#table-of-content)
+  - [Installation](#installation)
+    - [Installing Jetstream](#installing-jetstream)
+      - [Install Jetstream With Livewire](#install-jetstream-with-livewire)
+    - [Install Master Laravel Bootstrap Jetstream](#install-master-laravel-bootstrap-jetstream)
+    - [Finalizing The Installation](#finalizing-the-installation)
+    - [Extras](#extras)
+      - [Pagination](#pagination)
+  - [Credits](#credits)
+  - [License](#license)
 
 ## Installation
 
@@ -93,11 +91,11 @@ This will publish overrides to enable Bootstrap like the good old days!
 After installing Master jetstream and swapping Jetstream resources, remove tailwindCSS and its dependencies if any from your package.json and then install and build your NPM dependencies and migrate your database:
 
 ```
-npm install && npm run dev
+npm install && npm run build
 
 or  
 
-yarn && yarn dev
+yarn && yarn build
 
 
 php artisan migrate
