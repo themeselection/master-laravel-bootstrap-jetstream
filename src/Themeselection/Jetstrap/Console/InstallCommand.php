@@ -63,6 +63,17 @@ class InstallCommand extends Command
 
     // "/" Route...
     $this->replaceInFile('/dashboard', '/', app_path('Providers/RouteServiceProvider.php'));
+    // $this->replaceInFile('/dashboard', '/', app_path('Providers/RouteServiceProvider.php'));
+
+    $codeSnippet = <<<'EOD'
+    module.exports = {
+      plugins: [require('autoprefixer')]
+    };
+    EOD;
+
+    $filePath = base_path('postcss.config.js');
+
+    file_put_contents($filePath, $codeSnippet);
 
     // add components in navbar
     $this->replaceInFile('{{-- <x-switchable-team :team="$team" /> --}}', '<x-switchable-team :team="$team" />', resource_path('views/layouts/sections/navbar/navbar.blade.php'));
