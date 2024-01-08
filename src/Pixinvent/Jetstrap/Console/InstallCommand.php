@@ -64,6 +64,17 @@ class InstallCommand extends Command
     // "/" Route...
     $this->replaceInFile('/dashboard', '/', app_path('Providers/RouteServiceProvider.php'));
 
+    // Update postcss.config.js
+    $codeSnippet = <<<'EOD'
+    module.exports = {
+      plugins: [require('autoprefixer')]
+    };
+    EOD;
+
+    $filePath = base_path('postcss.config.js');
+
+    file_put_contents($filePath, $codeSnippet);
+
     // add components in navbar
     $this->replaceInFile('{{-- <x-switchable-team :team="$team" /> --}}', '<x-switchable-team :team="$team" />', resource_path('views/layouts/sections/navbar/navbar.blade.php'));
     $this->replaceInFile('{{-- <x-banner /> --}}', '<x-banner />', resource_path('views/layouts/contentNavbarLayout.blade.php'));
@@ -72,7 +83,8 @@ class InstallCommand extends Command
     // app/views
     (new Filesystem)->deleteDirectory(app_path('View'));
     // Assets...
-    (new Filesystem)->deleteDirectory(resource_path('css'));
+    $cssFilePath = resource_path('css/app.css');
+    file_put_contents($cssFilePath, '');
     (new Filesystem)->ensureDirectoryExists(resource_path('views'));
 
 
