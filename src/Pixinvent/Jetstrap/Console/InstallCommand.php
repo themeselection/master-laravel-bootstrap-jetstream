@@ -68,6 +68,7 @@ class InstallCommand extends Command
 
     // "/" Route...
     $this->replaceInFile('/dashboard', '/', app_path('Providers/RouteServiceProvider.php'));
+    $this->replaceInFile('/dashboard', '/', base_path('config/fortify.php'));
 
     // Update postcss.config.js
     $codeSnippet = <<<'EOD'
