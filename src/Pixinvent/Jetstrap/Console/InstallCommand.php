@@ -72,8 +72,9 @@ class InstallCommand extends Command
       (new Filesystem)->delete(resource_path('js/bootstrap.js'));
     }
 
-    // "/" Route...
+// "/" Route...
     $this->replaceInFile('/dashboard', '/', app_path('Providers/RouteServiceProvider.php'));
+    $this->replaceInFile('/dashboard', '/', base_path('config/fortify.php'));
 
     // add components in navbar
     $this->replaceInFile('{{-- <x-switchable-team :team="$team" /> --}}', '<x-switchable-team :team="$team" />', resource_path('views/layouts/sections/navbar/navbar.blade.php'));
