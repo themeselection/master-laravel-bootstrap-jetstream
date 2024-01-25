@@ -31,6 +31,14 @@ mix.webpackConfig({
   },
 
   plugins: [
+    new IgnorePlugin({
+      checkResource(resource, context) {
+        return [
+          path.join(__dirname, 'resources/assets/vendor/libs/@form-validation')
+          // Add more paths to ignore as needed
+        ].some(pathToIgnore => resource.startsWith(pathToIgnore));
+      }
+    }),
     new EnvironmentPlugin({
       // Application's public url
       BASE_URL: process.env.ASSET_URL ? `${process.env.ASSET_URL}/` : '/'
@@ -53,7 +61,7 @@ mix.webpackConfig({
         ],
         plugins: [
           '@babel/plugin-transform-destructuring',
-          '@babel/plugin-transform-object-rest-spread',
+          '@babel/plugin-proposal-object-rest-spread',
           '@babel/plugin-transform-template-literals'
         ],
         babelrc: false
@@ -118,6 +126,8 @@ mixAssetsDir('vendor/libs/**/!(_)*.scss', (src, dest) =>
   })
 );
 mixAssetsDir('vendor/libs/**/*.{png,jpg,jpeg,gif}', (src, dest) => mix.copy(src, dest));
+// Copy task for form validation plugin as premium plugin don't have npm package
+mixAssetsDir('vendor/libs/@form-validation/umd', (src, dest) => mix.copyDirectory(src, dest));
 
 // Fonts
 mixAssetsDir('vendor/fonts/*/*', (src, dest) => mix.copy(src, dest));
