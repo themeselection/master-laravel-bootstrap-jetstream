@@ -1,3 +1,6 @@
+@php
+  use Illuminate\Support\Facades\Gate;
+@endphp
 <x-form-section submit="updateTeamName">
   <x-slot name="title">
     {{ __('Team Name') }}

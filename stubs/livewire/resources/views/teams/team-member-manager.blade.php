@@ -1,3 +1,6 @@
+@php
+  use Illuminate\Support\Facades\Gate;
+@endphp
 <div>
   @if (Gate::check('addTeamMember', $team))
 
