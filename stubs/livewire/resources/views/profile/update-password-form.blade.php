@@ -8,7 +8,7 @@
   </x-slot>
 
   <x-slot name="form">
-    <div class="mb-3">
+    <div class="mb-5">
       <x-label class="form-label" for="current_password" value="{{ __('Current Password') }}" />
       <x-input id="current_password" type="password"
         class="{{ $errors->has('current_password') ? 'is-invalid' : '' }}" wire:model="state.current_password"
@@ -16,14 +16,14 @@
       <x-input-error for="current_password" />
     </div>
 
-    <div class="mb-3">
+    <div class="mb-5">
       <x-label class="form-label" for="password" value="{{ __('New Password') }}" />
       <x-input id="password" type="password" class="{{ $errors->has('password') ? 'is-invalid' : '' }}"
         wire:model="state.password" autocomplete="new-password" />
       <x-input-error for="password" />
     </div>
 
-    <div class="mb-3">
+    <div class="mb-5">
       <x-label class="form-label" for="password_confirmation" value="{{ __('Confirm Password') }}" />
       <x-input id="password_confirmation" type="password"
         class="{{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"

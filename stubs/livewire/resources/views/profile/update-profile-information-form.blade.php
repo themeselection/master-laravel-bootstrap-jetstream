@@ -15,7 +15,7 @@
 
     <!-- Profile Photo -->
     @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-      <div class="mb-3" x-data="{photoName: null, photoPreview: null}">
+      <div class="mb-6" x-data="{photoName: null, photoPreview: null}">
         <!-- Profile Photo File Input -->
         <input type="file" hidden wire:model.live="photo" x-ref="photo"
           x-on:change=" photoName = $refs.photo.files[0].name; const reader = new FileReader(); reader.onload = (e) => { photoPreview = e.target.result;}; reader.readAsDataURL($refs.photo.files[0]);" />
@@ -45,7 +45,7 @@
     @endif
 
     <!-- Name -->
-    <div class="mb-3">
+    <div class="mb-5">
       <x-label class="form-label" for="name" value="{{ __('Name') }}" />
       <x-input id="name" type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
         wire:model="state.name" autocomplete="name" />
@@ -53,7 +53,7 @@
     </div>
 
     <!-- Email -->
-    <div class="mb-3">
+    <div class="mb-5">
       <x-label class="form-label" for="email" value="{{ __('Email') }}" />
       <x-input id="email" type="email" class="{{ $errors->has('email') ? 'is-invalid' : '' }}"
         wire:model="state.email" />
