@@ -17,10 +17,10 @@
     </p>
 
     @if (count($this->sessions) > 0)
-      <div class="mt-3">
+      <div class="mt-5">
         <!-- Other Browser Sessions -->
         @foreach ($this->sessions as $session)
-          <div class="d-flex mb-50">
+          <div class="d-flex">
             <div>
               @if ($session->agent->isDesktop())
                 <svg fill="none" width="32" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -63,7 +63,7 @@
       </div>
     @endif
 
-    <div class="d-flex mt-3">
+    <div class="d-flex mt-5">
       <x-button wire:click="confirmLogout" wire:loading.attr="disabled">
         {{ __('Log Out Other Browser Sessions') }}
       </x-button>
@@ -93,7 +93,7 @@
           {{ __('Cancel') }}
         </x-secondary-button>
 
-        <button class="btn btn-danger ms-1 text-uppercase" wire:click="logoutOtherBrowserSessions"
+        <button class="btn btn-danger ms-1" wire:click="logoutOtherBrowserSessions"
           wire:loading.attr="disabled">
           {{ __('Log out Other Browser Sessions') }}
         </button>

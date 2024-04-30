@@ -16,7 +16,7 @@
     </x-action-message>
 
     <!-- Team Owner Information -->
-    <div class="mb-2">
+    <div class="mb-6">
       <x-label class="form-label" value="{{ __('Team Owner') }}" />
 
       <div class="d-flex justify-content-start align-items-center user-name">
