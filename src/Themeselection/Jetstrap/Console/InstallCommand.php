@@ -84,7 +84,7 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('content.dashboard.dashboards-analytics');
+        return view('/');
     })->name('dashboard');
 });
 EOD;
