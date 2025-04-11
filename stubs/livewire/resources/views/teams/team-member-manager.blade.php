@@ -1,3 +1,6 @@
+@php
+  use Illuminate\Support\Facades\Gate;
+@endphp
 <div>
   @if (Gate::check('addTeamMember', $team))
 
@@ -16,12 +19,12 @@
           {{ __('Added.') }}
         </x-action-message>
 
-        <div class="mb-3">
+        <div class="mb-6">
           {{ __('Please provide the email address of the person you would like to add to this team. The email address must be associated with an existing account.') }}
         </div>
 
         <!-- Member Email -->
-        <div class="mb-3">
+        <div class="mb-5">
           <x-label class="form-label" for="email" value="{{ __('Email') }}" />
           <x-input id="name" type="email" class="{{ $errors->has('email') ? 'is-invalid' : '' }}"
             wire:model="addTeamMemberForm.email" />
@@ -30,9 +33,9 @@
 
         <!-- Role -->
         @if (count($this->roles) > 0)
-          <div class="my-3">
-            <div class="mb-3">
-              <x-label class="fw-medium" for="role" value="{{ __('Role') }}" />
+          <div class="my-5">
+            <div>
+              <x-label class="form-label" for="role" value="{{ __('Role') }}" />
 
               <input type="hidden" class="{{ $errors->has('role') ? 'is-invalid' : '' }}">
               <x-input-error for="role" />

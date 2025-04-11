@@ -1,7 +1,8 @@
 @extends('layouts.layoutMaster')
 
 @php
-$breadcrumbs = [['link' => 'home', 'name' => 'Home'], ['name' => 'Team Settings']];
+  use Illuminate\Support\Facades\Gate;
+  $breadcrumbs = [['link' => 'home', 'name' => 'Home'], ['name' => 'Team Settings']];
 @endphp
 
 @section('title', 'Team Settings')

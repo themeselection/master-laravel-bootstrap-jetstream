@@ -15,7 +15,7 @@
       </x-action-message>
 
       <!-- Token Name -->
-      <div class="mb-3">
+      <div class="mb-5">
         <x-label for="name" class="form-label" value="{{ __('Token Name') }}" />
         <x-input id="name" type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
           wire:model="createApiTokenForm.name" autofocus />
@@ -70,7 +70,7 @@
         <x-slot name="content">
           <div>
             @foreach ($this->user->tokens->sortBy('name') as $token)
-              <div class="d-flex justify-content-between">
+              <div class="d-flex justify-content-between align-items-center mb-2">
                 <div class="fw-medium">
                   {{ $token->name }}
                 </div>
@@ -83,7 +83,7 @@
                   @endif
 
                   @if (Laravel\Jetstream\Jetstream::hasPermissions())
-                    <button class="btn btn-link text-secondary"
+                    <button class="btn btn-link text-secondary me-2"
                       wire:click="manageApiTokenPermissions({{ $token->id }})">
                       {{ __('Permissions') }}
                     </button>
@@ -109,11 +109,11 @@
     </x-slot>
 
     <x-slot name="content">
-      <div>
+      <div class="mb-2">
         {{ __('Please copy your new API token. For your security, it won\'t be shown again.') }}
       </div>
 
-      <div class="mb-3">
+      <div class="mb-5">
         <x-input x-ref="plaintextToken" type="text" readonly :value="$plainTextToken" autofocus autocomplete="off"
           autocorrect="off" autocapitalize="off" spellcheck="false"
           @showing-token-modal.window="setTimeout(() => $refs.plaintextToken.select(), 250)" />
