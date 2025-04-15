@@ -26,8 +26,8 @@
       <div class="mt-3" x-data="{}"
         x-on:confirming-password.window="setTimeout(() => $refs.confirmable_password.focus(), 250)">
         <x-input type="password" class="{{ $errors->has('confirmable_password') ? 'is-invalid' : '' }}"
-          placeholder="{{ __('Password') }}" x-ref="confirmable_password" wire:model="confirmablePassword"
-          wire:keydown.enter="confirmPassword" />
+          autocomplete="current-password" placeholder="{{ __('Password') }}" x-ref="confirmable_password"
+          wire:model="confirmablePassword" wire:keydown.enter="confirmPassword" />
 
         <x-input-error for="confirmable_password" />
       </div>

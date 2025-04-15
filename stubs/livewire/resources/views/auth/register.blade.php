@@ -75,7 +75,7 @@
               @enderror
             </div>
             <div class="mb-6 form-password-toggle">
-              <label class="form-label" for="password">Password</label>
+              <label class="form-label" for="password-confirm">Confirm Password</label>
               <div class="input-group input-group-merge">
                 <input type="password" id="password-confirm" class="form-control" name="password_confirmation"
                   placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
