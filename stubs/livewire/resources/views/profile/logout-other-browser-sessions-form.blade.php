@@ -24,7 +24,7 @@
             <div>
               @if ($session->agent->isDesktop())
                 <svg fill="none" width="32" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  viewBox="0 0 24 24" stroke="currentColor" class="text-muted">
+                  viewBox="0 0 24 24" stroke="currentColor" class="text-body-secondary">
                   <path
                     d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
                   </path>
@@ -32,7 +32,7 @@
               @else
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" viewBox="0 0 24 24" stroke-width="2"
                   stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                  class="text-muted">
+                  class="text-body-secondary">
                   <path d="M0 0h24v24H0z" stroke="none"></path>
                   <rect x="7" y="4" width="10" height="16" rx="1"></rect>
                   <path d="M11 5h2M12 17v.01"></path>
@@ -47,7 +47,7 @@
               </div>
 
               <div>
-                <div class="small text-muted">
+                <div class="small text-body-secondary">
                   {{ $session->ip_address }},
 
                   @if ($session->is_current_device)
@@ -93,8 +93,7 @@
           {{ __('Cancel') }}
         </x-secondary-button>
 
-        <button class="btn btn-danger ms-1" wire:click="logoutOtherBrowserSessions"
-          wire:loading.attr="disabled">
+        <button class="btn btn-danger ms-1" wire:click="logoutOtherBrowserSessions" wire:loading.attr="disabled">
           {{ __('Log out Other Browser Sessions') }}
         </button>
       </x-slot>

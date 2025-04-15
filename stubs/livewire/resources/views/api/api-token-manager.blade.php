@@ -15,7 +15,7 @@
       </x-action-message>
 
       <!-- Token Name -->
-      <div class="mb-5">
+      <div class="mb-6">
         <x-label for="name" class="form-label" value="{{ __('Token Name') }}" />
         <x-input id="name" type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}"
           wire:model="createApiTokenForm.name" autofocus />
@@ -32,8 +32,8 @@
               <div class="col-6">
                 <div class="mb-3">
                   <div class="form-check">
-                    <x-checkbox wire:model="createApiTokenForm.permissions"
-                      id="{{ 'create-' . $permission }}" :value="$permission" />
+                    <x-checkbox wire:model="createApiTokenForm.permissions" id="{{ 'create-' . $permission }}"
+                      :value="$permission" />
                     <label class="form-check-label" for="{{ 'create-' . $permission }}">
                       {{ $permission }}
                     </label>
@@ -47,6 +47,9 @@
     </x-slot>
 
     <x-slot name="actions">
+      <x-action-message on="created">
+        {{ __('Created.') }}
+      </x-action-message>
       <x-button>
         {{ __('Create') }}
       </x-button>
@@ -77,7 +80,7 @@
 
                 <div class="d-flex">
                   @if ($token->last_used_at)
-                    <div class="text-muted">
+                    <div class="text-body-secondary">
                       {{ __('Last used') }} {{ $token->last_used_at->diffForHumans() }}
                     </div>
                   @endif
@@ -113,7 +116,7 @@
         {{ __('Please copy your new API token. For your security, it won\'t be shown again.') }}
       </div>
 
-      <div class="mb-5">
+      <div>
         <x-input x-ref="plaintextToken" type="text" readonly :value="$plainTextToken" autofocus autocomplete="off"
           autocorrect="off" autocapitalize="off" spellcheck="false"
           @showing-token-modal.window="setTimeout(() => $refs.plaintextToken.select(), 250)" />

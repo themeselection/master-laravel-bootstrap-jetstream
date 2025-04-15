@@ -36,7 +36,7 @@ class InstallCommand extends Command
     if ((new Filesystem)->exists(base_path('tailwind.config.js'))) {
       (new Filesystem)->delete(base_path('tailwind.config.js'));
     }
-    
+
     if ((new Filesystem)->exists(base_path('postcss.config.js'))) {
       (new Filesystem)->delete(base_path('postcss.config.js'));
     }
@@ -63,9 +63,9 @@ class InstallCommand extends Command
 
     // "/" Route...
     $this->replaceInFile('/dashboard', '/', base_path('config/fortify.php'));
-   
+
     // Update routes in web.php
-  $originalRoute = <<<'EOD'
+    $originalRoute = <<<'EOD'
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -77,22 +77,20 @@ Route::middleware([
 });
 EOD;
 
-  $newRoute = <<<'EOD'
+    $newRoute = <<<'EOD'
 Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
+  'auth:sanctum',
+  config('jetstream.auth_session'),
+  'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('/');
-    })->name('dashboard');
+  Route::get('/dashboard', [Analytics::class, 'index'])->name('dashboard');
 });
 EOD;
 
     $this->replaceInFile($originalRoute, $newRoute, base_path('routes/web.php'));
 
     // add components in navbar
-    $this->replaceInFile('{{-- <x-switchable-team :team="$team" /> --}}', '<x-switchable-team :team="$team" />', resource_path('views/layouts/sections/navbar/navbar.blade.php'));
+    $this->replaceInFile('{{-- <x-switchable-team :team="$team" /> --}}', '<x-switchable-team :team="$team" />', resource_path('views/layouts/sections/navbar/navbar-partial.blade.php'));
     $this->replaceInFile('{{-- <x-banner /> --}}', '<x-banner />', resource_path('views/layouts/contentNavbarLayout.blade.php'));
     $this->replaceInFile('{{-- <x-banner /> --}}', '<x-banner />', resource_path('views/layouts/horizontalLayout.blade.php'));
 
@@ -101,7 +99,7 @@ EOD;
     // Assets...
     $cssFilePath = resource_path('css/app.css');
     file_put_contents($cssFilePath, '');
-    
+
     (new Filesystem)->ensureDirectoryExists(resource_path('views'));
 
 

@@ -1,5 +1,5 @@
 @php
-    use Illuminate\Support\Facades\Auth;
+  use Illuminate\Support\Facades\Auth;
 @endphp
 
 @props(['team', 'component' => 'dropdown-link'])

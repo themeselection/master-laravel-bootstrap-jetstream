@@ -11,7 +11,7 @@
   </x-slot>
 
   <x-slot name="content">
-    <p class="text-muted">
+    <p class="text-body-secondary">
       {{ __('Once a team is deleted, all of its resources and data will be permanently deleted. Before deleting this team, please download any data or information regarding this team that you wish to retain.') }}
     </p>
 
