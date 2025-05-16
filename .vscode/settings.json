@@ -1,0 +1,58 @@
+{
+  "editor.wordWrap": "off",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "files.trimFinalNewlines": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "cSpell.language": "en",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/_temp": true,
+    "**/bower_components": true,
+    "*.min.js": true,
+    "*.min.css": true
+  },
+  "blade.format.enable": true,
+  "bladeFormatter.format.indentSize": 2,
+  // Extension: Prettier
+  "prettier.requireConfig": true,
+  "prettier.configPath": ".prettierrc.json",
+  "prettier.ignorePath": ".prettierignore",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // Extension: Stylelint
+  "stylelint.packageManager": "pnpm",
+  "stylelint.validate": [
+    "scss"
+  ],
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // Extension: Git
+  "git.rebaseWhenSync": true,
+  "git.enableSmartCommit": true,
+  // Extension: ESLint
+  "eslint.packageManager": "yarn",
+  "eslint.format.enable": true,
+  "eslint.options": {
+    "overrideConfigFile": ".eslintrc.json"
+  },
+  "eslint.validate": [
+    "vue",
+    "html",
+    "typescript",
+    "typescriptreact"
+  ],
+  // Extension: npm
+  "npm.packageManager": "yarn",
+  "[blade]": {
+    "editor.defaultFormatter": "shufo.vscode-blade-formatter"
+  }
+}
