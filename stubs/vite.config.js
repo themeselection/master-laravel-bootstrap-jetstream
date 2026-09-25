@@ -76,7 +76,11 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'resources')
+      '@': path.resolve(__dirname, 'resources'),
+      // plyr 3.8 ships an `exports` map that exposes only `./plyr.scss` and the css; libs/plyr/plyr.scss (Master's file)
+      // imports the individual settings partials under plyr/src/sass/…, which Master's sass CLI resolves from the load
+      // path but Vite refuses through the exports map. The alias resolves plyr/src/* on the filesystem, bypassing exports.
+      'plyr/src': path.resolve(__dirname, 'node_modules/plyr/src')
     }
   },
   json: {
